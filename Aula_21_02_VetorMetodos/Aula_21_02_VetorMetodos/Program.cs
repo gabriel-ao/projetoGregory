@@ -26,10 +26,11 @@ namespace Aula_21_02_VetorMetodos
 
             int opcao = Int32.Parse(Console.ReadLine());
 
-            int[] codigoAluno = new int[50];
-            string[] nome = new string[50];
-            int[] idade = new int[50];
-            char[] sexo = new char[50];
+            int tamanhoVetor = 2;
+            int[] codigoAluno = new int[tamanhoVetor];
+            string[] nome = new string[tamanhoVetor];
+            int[] idade = new int[tamanhoVetor];
+            char[] sexo = new char[tamanhoVetor];
 
             switch (opcao)
             {
@@ -52,18 +53,23 @@ namespace Aula_21_02_VetorMetodos
 
         public static void cadastro(ref int[] codigoAluno, ref string[] nome, ref int[] idade, ref char[] sexo)
         {
-
             int opcao;
-
 
             for (int i = 0; i < idade.Length; i++)
             {
+                Console.WriteLine("====================================");
+                Console.WriteLine("Digite o codigo do aluno");
+                codigoAluno[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("====================================");
                 Console.WriteLine("Digite o seu nome: ");
                 nome[i] = Console.ReadLine();
+                Console.WriteLine("====================================");
                 Console.WriteLine("Digite sua idade: ");
                 idade[i] = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("====================================");
                 Console.WriteLine("Digite o seu sexo: ");
                 sexo[i] = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine("====================================");
 
                 Console.WriteLine("\n\nDeseja cadastrar novamente (1-SIM / 2-NÃO)");
                 opcao = Int32.Parse(Console.ReadLine());
@@ -84,12 +90,17 @@ namespace Aula_21_02_VetorMetodos
 
         public static void listar(ref int[] codigoAluno, ref string[] nome, ref int[] idade, ref char[] sexo)
         {
-            foreach (int idades in idade)
+
+            for (int i = 0; i < idade.Length; i++)
             {
-                int i = 0;
-                Console.WriteLine("Nome: ", nome[i]);
-                Console.WriteLine("Idade:", idade[i]);
+                Console.WriteLine("Nome: ");
+                Console.WriteLine(nome[i]);
+                Console.WriteLine("Idade:");
+                Console.WriteLine(idade[i]);
             }
+            Console.ReadKey();
+            Console.Clear();
+            menu();
         }
 
 
@@ -98,6 +109,7 @@ namespace Aula_21_02_VetorMetodos
         {
             // comando utilizado para fechar o programa direto
             Console.WriteLine("programa finalizado, até mais!!!!");
+            Console.ReadKey();
             Environment.Exit(0);
         }
 

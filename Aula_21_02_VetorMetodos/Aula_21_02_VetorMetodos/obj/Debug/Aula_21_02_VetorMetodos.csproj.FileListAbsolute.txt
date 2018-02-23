@@ -1,0 +1,7 @@
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\bin\Debug\Aula_21_02_VetorMetodos.exe.config
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\bin\Debug\Aula_21_02_VetorMetodos.exe
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\bin\Debug\Aula_21_02_VetorMetodos.pdb
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\obj\Debug\Aula_21_02_VetorMetodos.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\obj\Debug\Aula_21_02_VetorMetodos.exe
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\obj\Debug\Aula_21_02_VetorMetodos.pdb
+C:\Users\gabri\Documents\GitHub\projetoGregory\Aula_21_02_VetorMetodos\Aula_21_02_VetorMetodos\obj\Debug\Aula_21_02_VetorMetodos.csprojResolveAssemblyReference.cache
