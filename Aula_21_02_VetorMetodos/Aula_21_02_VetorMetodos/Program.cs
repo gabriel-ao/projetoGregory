@@ -16,38 +16,41 @@ namespace Aula_21_02_VetorMetodos
 
         public static void menu()
         {
-            Console.Clear();
-            Console.WriteLine("Cadastre 50 alunos \n\n" +
-            "o que vc deseha fazer: \n\n" +
-            "1 - cadastrar aluno. \n\n" +
-            "2 - listar alunos cadastrados. \n\n" +
-            "3 - sair do programa. \n\n" +
-            "Digite o numero desejado: ");
+            
+                Console.Clear();
+                Console.WriteLine("Cadastre 50 alunos \n\n" +
+                "o que vc deseha fazer: \n\n" +
+                "1 - cadastrar aluno. \n\n" +
+                "2 - listar alunos cadastrados. \n\n" +
+                "3 - sair do programa. \n\n" +
+                "Digite o numero desejado: ");
 
-            int opcao = Int32.Parse(Console.ReadLine());
+                int opcao = Int32.Parse(Console.ReadLine());
+            while (opcao !=3)
+            { 
+                int tamanhoVetor = 2;
+                int[] codigoAluno = new int[tamanhoVetor];
+                string[] nome = new string[tamanhoVetor];
+                int[] idade = new int[tamanhoVetor];
+                char[] sexo = new char[tamanhoVetor];
 
-            int tamanhoVetor = 2;
-            int[] codigoAluno = new int[tamanhoVetor];
-            string[] nome = new string[tamanhoVetor];
-            int[] idade = new int[tamanhoVetor];
-            char[] sexo = new char[tamanhoVetor];
-
-            switch (opcao)
-            {
-                case 1:
-                    cadastro(ref codigoAluno, ref nome, ref idade, ref sexo);
-                    break;
-                case 2:
-                    listar(ref codigoAluno, ref nome, ref idade, ref sexo);
-                    break;
-                case 3:
-                    fechar();
-                    break;
-                default:
-                    aviso();
-                    break;
+                switch (opcao)
+                {
+                    case 1:
+                        cadastro(ref codigoAluno, ref nome, ref idade, ref sexo);
+                        break;
+                    case 2:
+                        listar(ref codigoAluno, ref nome, ref idade, ref sexo);
+                        break;
+                    case 3:
+                        fechar();
+                        break;
+                    default:
+                        aviso();
+                        break;
+                }
+                Console.ReadKey();
             }
-            Console.ReadKey();
         }
 
 
@@ -59,7 +62,7 @@ namespace Aula_21_02_VetorMetodos
             {
                 Console.WriteLine("====================================");
                 Console.WriteLine("Digite o codigo do aluno");
-                codigoAluno[i] = Convert.ToInt32(Console.ReadLine());
+                codigoAluno[i]= Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("====================================");
                 Console.WriteLine("Digite o seu nome: ");
                 nome[i] = Console.ReadLine();
@@ -71,20 +74,20 @@ namespace Aula_21_02_VetorMetodos
                 sexo[i] = Convert.ToChar(Console.ReadLine());
                 Console.WriteLine("====================================");
 
-                Console.WriteLine("\n\nDeseja cadastrar novamente (1-SIM / 2-NÃO)");
-                opcao = Int32.Parse(Console.ReadLine());
-                if (opcao == 1)
-                {
-                    continue;
-                }
-                else if (opcao == 2)
-                {
-                    menu();
-                }
-                else
-                {
-                    Console.WriteLine("opcao errada");
-                }
+                 Console.WriteLine("\n\nDeseja cadastrar novamente (1-SIM / 2-NÃO)");
+                  opcao = Int32.Parse(Console.ReadLine());
+                  if (opcao == 1)
+                  {
+                      continue;
+                  }
+                  else if (opcao == 2)
+                  {
+                      break;
+                  }
+                  else
+                  {
+                      Console.WriteLine("opcao errada");
+                  }
             }
         }
 
@@ -93,10 +96,8 @@ namespace Aula_21_02_VetorMetodos
 
             for (int i = 0; i < idade.Length; i++)
             {
-                Console.WriteLine("Nome: ");
-                Console.WriteLine(nome[i]);
-                Console.WriteLine("Idade:");
-                Console.WriteLine(idade[i]);
+                Console.WriteLine("Nome: {2}" + nome[i]);
+                Console.WriteLine("Idade: {3}" + idade[i]);
             }
             Console.ReadKey();
             Console.Clear();
