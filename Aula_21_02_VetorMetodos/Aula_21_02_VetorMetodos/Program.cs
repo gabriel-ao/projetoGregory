@@ -13,6 +13,14 @@ namespace Aula_21_02_VetorMetodos {
         }
 
         public static void menu() {
+
+            int tamanhoVetor = 2;
+            int[] codigoAluno = new int[tamanhoVetor];
+            string[] nome = new string[tamanhoVetor];
+            int[] idade = new int[tamanhoVetor];
+            char[] sexo = new char[tamanhoVetor];
+            int indiceProximoAluno = -1;
+
             while (true) {
                 Console.Clear();
                 Console.WriteLine("Cadastre 50 alunos \n\n" +
@@ -25,15 +33,7 @@ namespace Aula_21_02_VetorMetodos {
                 "Digite o numero desejado: ");
 
                 int opcao = Int32.Parse(Console.ReadLine());
-
-                int tamanhoVetor = 2;
-                int[] codigoAluno = new int[tamanhoVetor];
-                string[] nome = new string[tamanhoVetor];
-                int[] idade = new int[tamanhoVetor];
-                char[] sexo = new char[tamanhoVetor];
-
-                int indiceProximoAluno = 0;
-
+                
 
                 switch (opcao) {
                     case 1:
@@ -57,28 +57,22 @@ namespace Aula_21_02_VetorMetodos {
 
         }
 
-
         private static void cancelar(ref int[] codigoAluno, ref string[] nome, ref int[] idade, ref char[] sexo) {
 
             Console.WriteLine("digite o nome do aluno que de");
 
-
-
         }
 
-
         public static void cadastro(ref int[] codigoAluno, ref string[] nome, ref int[] idade, ref char[] sexo, ref int indiceProximoAluno) {
-            int opcao;
 
-            for (; indiceProximoAluno < idade.Length; indiceProximoAluno++) {
 
+            if(indiceProximoAluno == codigoAluno.Length) {
+                Console.WriteLine("VETOR CHEIO");
+            } else {
+
+                indiceProximoAluno++;
                 //indice do aluno automatico
-                if(indiceProximoAluno == 0) {
-                    codigoAluno[indiceProximoAluno] = indiceProximoAluno++;
-                } else {
-                    codigoAluno[indiceProximoAluno] = indiceProximoAluno++;
-                }
-
+                codigoAluno[indiceProximoAluno] = indiceProximoAluno + 1;
 
                 Console.WriteLine("====================================");
                 Console.WriteLine("Digite o seu nome: ");
@@ -90,36 +84,20 @@ namespace Aula_21_02_VetorMetodos {
                 Console.WriteLine("Digite o seu sexo: ");
                 sexo[indiceProximoAluno] = Convert.ToChar(Console.ReadLine());
                 Console.WriteLine("====================================");
-
-                Console.WriteLine("\n\nDeseja cadastrar novamente (1-SIM / 2-NÃO)");
-                opcao = Int32.Parse(Console.ReadLine());
-                if (opcao == 1) {
-                    continue;
-                } else if (opcao == 2) {
-                    break;
-                } else {
-                    Console.WriteLine("opcao errada");
-                }
             }
         }
 
         public static void listar(ref int[] codigoAluno, ref string[] nome, ref int[] idade, ref char[] sexo) {
 
             for (int i = 0; i < idade.Length; i++) {
-                //if (codigoAluno[i] != 0) {
-
-                    Console.WriteLine("{0}codigo  {1}nome {2}idade  {3}sexo", codigoAluno[i], nome[i], idade[i], sexo[i]);
-                    //Console.WriteLine("Codigo: " + codigoAluno[i]);
-                    //Console.WriteLine("Nome: " + nome[i]);
-                    //Console.WriteLine("Idade: " + idade[i]);
-                //}
+               if (nome[i] != null) {
+                    Console.WriteLine("codigo: {0},  nome: {1}, idade: {2},  sexo: {3}.", codigoAluno[i], nome[i], idade[i], sexo[i]);
+               }
             }
             Console.ReadKey();
             Console.Clear();
 
         }
-
-
 
         public static void fechar() {
             // comando utilizado para fechar o programa direto
